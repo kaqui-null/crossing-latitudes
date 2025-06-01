@@ -26,14 +26,17 @@ func shoot():
 		var instance = magic_scene.instanciate()
 		get_tree().current_scene.add_child(instance)
 		
+		var dir = direction
 		if Input.is_action_pressed("aim_mode"):
 			var input_dir = Input.get_vector("left", "right", "up", "down")
 			dir = get_aim_direction(input_dir)
+		
+		instance.direction = dir
 
 
 func get_aim_direction(input_dir: Vector2) -> Vector2:
 	if input_dir.length() == 0:
-		return facing_direction  # ou qualquer padrão
+		return direction  # ou qualquer padrão
 	
 	var angle = rad_to_deg(input_dir.angle())
 	
@@ -48,4 +51,4 @@ func get_aim_direction(input_dir: Vector2) -> Vector2:
 	elif angle < 22.5:
 		return Vector2.RIGHT
 
-	return facing_direction
+	return direction
