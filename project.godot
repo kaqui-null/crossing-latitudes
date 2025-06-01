@@ -15,6 +15,10 @@ run/main_scene="uid://070mc47b0j1n"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[dotnet]
+
+project/assembly_name="crossing-latitudes"
+
 [input]
 
 left={
