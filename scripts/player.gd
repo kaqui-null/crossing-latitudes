@@ -4,9 +4,20 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 var direction = Vector2.RIGHT
-@export var magic_scene = PackedScene
+@export var magic_scene: PackedScene
+@onready var magic_spawner = %magic_spawner
+var magic_cooldown = 0.1
+var magic_timer = 0.0
 
 func _physics_process(delta: float) -> void:
+	
+	if magic_timer > 0:
+		magic_timer -= delta
+	move(delta)
+	handle_attack()
+	
+	
+func move(delta):
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 		
@@ -18,20 +29,27 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-	
+		
 	move_and_slide()
+
+func handle_attack():
+	if Input.is_action_pressed("shoot") and magic_timer <= 0:
+		shoot()
+		magic_timer = magic_cooldown
 
 func shoot():
 	if magic_scene:
-		var instance = magic_scene.instanciate()
+		var instance = magic_scene.instantiate()
 		get_tree().current_scene.add_child(instance)
+		instance.global_transform = magic_spawner.global_transform
 		
 		var dir = direction
 		if Input.is_action_pressed("aim_mode"):
 			var input_dir = Input.get_vector("left", "right", "up", "down")
 			dir = get_aim_direction(input_dir)
-		
+			
 		instance.direction = dir
+		
 
 
 func get_aim_direction(input_dir: Vector2) -> Vector2:
