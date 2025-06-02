@@ -18,10 +18,18 @@ position = Vector2(385, 314)
 script = ExtResource("4_jyhfs")
 
 [node name="Player" parent="." instance=ExtResource("5_tbgi4")]
-position = Vector2(4514, -13)
+position = Vector2(31, 542)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 scale = Vector2(0.3, 0.3)
 zoom = Vector2(3, 3)
 limit_left = 5
 position_smoothing_enabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(82, 6)
+polygon = PackedVector2Array(-363, 632, 2947, 619, 3167, 496, 4575, 484, 5256, 454, 5256, 698, -355, 824)
+
+[connection signal="body_entered" from="Area2D" to="Player" method="_on_area_2d_body_entered"]

@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://w0eh1wfvuwcy"]
+[gd_scene load_steps=3 format=3 uid="uid://w0eh1wfvuwcy"]
 
+[ext_resource type="Script" uid="uid://bxwffh5djdb2h" path="res://scripts/game_over.gd" id="1_wqhvx"]
 [ext_resource type="FontFile" uid="uid://drirr01l1wrix" path="res://assets/font/fontes/vinizinho.ttf" id="1_xeevv"]
 
 [node name="gameOver" type="CanvasLayer"]
+script = ExtResource("1_wqhvx")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = -1
@@ -36,3 +38,5 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_xeevv")
 theme_override_font_sizes/font_size = 50
 text = "RESTART"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

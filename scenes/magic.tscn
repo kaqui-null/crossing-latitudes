@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://cuo1n5eemywg7" path="res://scripts/magic.gd" id="1_788o1"]
 [ext_resource type="Texture2D" uid="uid://ddsc4ppje5b2m" path="res://icon.svg" id="1_ghace"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_788o1"]
-radius = 28.0
-height = 122.0
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0f2g5"]
+radius = 33.0
+height = 126.0
 
 [node name="magic" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 2
+collision_mask = 4
 script = ExtResource("1_788o1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -17,6 +17,11 @@ position = Vector2(0, 0.5)
 scale = Vector2(1, 0.460938)
 texture = ExtResource("1_ghace")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_788o1")
+shape = SubResource("CapsuleShape2D_0f2g5")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

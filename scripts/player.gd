@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
 var direction = Vector2.RIGHT
@@ -8,12 +7,16 @@ var direction = Vector2.RIGHT
 @onready var magic_spawner = %magic_spawner
 var magic_cooldown = 0.1
 var magic_timer = 0.0
+var dead = false
 
 func _ready() -> void:
 	$AnimatedSprite2D.stop()
 	$AnimatedSprite2D.play("idle")
 
 func _physics_process(delta: float) -> void:
+	
+	if dead:
+		call_deferred("_load_game_over")
 	
 	if magic_timer > 0:
 		magic_timer -= delta
@@ -83,3 +86,13 @@ func get_aim_direction(input_dir: Vector2) -> Vector2:
 		return Vector2.RIGHT
 
 	return direction
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body == self:
+		die()
+
+func die():
+	dead = true
+	
+func _load_game_over():
+	get_tree().change_scene_to_file("res://scenes/game_over.tscn")

@@ -1,6 +1,7 @@
-[gd_scene load_steps=25 format=3 uid="uid://bkgky87w5x3qy"]
+[gd_scene load_steps=27 format=3 uid="uid://bkgky87w5x3qy"]
 
 [ext_resource type="Texture2D" uid="uid://v4h8bj0ktta2" path="res://assets/Dark VFX 01 - 02/Dark VFX 1/Separeted frames/Dark VFX 1 (40x32)12.png" id="1_4t753"]
+[ext_resource type="Script" uid="uid://uiesmn3t5y48" path="res://scenes/enemy/eye.gd" id="1_pmd8f"]
 [ext_resource type="Texture2D" uid="uid://ym0hjku6n7fg" path="res://assets/Dark VFX 01 - 02/Dark VFX 1/Separeted frames/Dark VFX 1 (40x32)13.png" id="2_fnv4i"]
 [ext_resource type="Texture2D" uid="uid://un7if0asjnli" path="res://assets/Dark VFX 01 - 02/Dark VFX 1/Separeted frames/Dark VFX 1 (40x32)14.png" id="3_651w4"]
 [ext_resource type="Texture2D" uid="uid://drhe4wftf1c4a" path="res://assets/Dark VFX 01 - 02/Dark VFX 1/Separeted frames/Dark VFX 1 (40x32)15.png" id="4_pfx7i"]
@@ -105,7 +106,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8xo5g"]
 size = Vector2(20, 32.1123)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_laboc"]
+size = Vector2(26, 35)
+
 [node name="static_ghost" type="CharacterBody2D"]
+script = ExtResource("1_pmd8f")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -118,3 +123,13 @@ speed_scale = 2.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(75, 68)
 shape = SubResource("RectangleShape2D_8xo5g")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 7
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(75, 67.5)
+shape = SubResource("RectangleShape2D_laboc")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

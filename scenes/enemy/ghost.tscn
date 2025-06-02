@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://be86rq3xcf3l0"]
+[gd_scene load_steps=15 format=3 uid="uid://be86rq3xcf3l0"]
 
 [ext_resource type="Script" uid="uid://bsegyii2oeghk" path="res://scripts/ghost.gd" id="1_ic586"]
 [ext_resource type="Texture2D" uid="uid://dubhcwo5q6m4i" path="res://assets/Dark VFX 01 - 02/Dark VFX 1/Separeted frames/Dark VFX 1 (40x32)1.png" id="1_uvnye"]
@@ -55,7 +55,12 @@ animations = [{
 
 [sub_resource type="Curve2D" id="Curve2D_874xv"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ic586"]
+radius = 11.0
+
 [node name="Ghost" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 7
 script = ExtResource("1_ic586")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -73,3 +78,11 @@ shape = SubResource("CircleShape2D_uvpab")
 curve = SubResource("Curve2D_874xv")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(21, 16)
+shape = SubResource("CircleShape2D_ic586")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
