@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://csshvgh3m653f"]
+
+[ext_resource type="FontFile" uid="uid://d0wrigbhryx5j" path="res://assets/font/kenney_kenney-fonts/Fonts/Kenney Mini.ttf" id="1_iep14"]
+[ext_resource type="Texture2D" uid="uid://rog1l81g8a57" path="res://assets/ui/kenney_ui-pack/Vector/Blue/button_rectangle_border.svg" id="1_mk4g1"]
+[ext_resource type="Script" uid="uid://dr8rqf2nw1yx7" path="res://scripts/button.gd" id="3_iep14"]
+
+[node name="MenuPrincipal" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+offset_top = 2.0
+offset_right = 1155.0
+offset_bottom = 651.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_iep14")
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("1_mk4g1")
+clip_text = true
+script = ExtResource("3_iep14")
+
+[node name="texto_botao" type="Label" parent="CenterContainer/VBoxContainer/Button"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 6.0
+offset_right = 194.0
+offset_bottom = 65.0
+theme_override_colors/font_color = Color(0, 0, 0.447059, 1)
+theme_override_fonts/font = ExtResource("1_iep14")
+theme_override_font_sizes/font_size = 30
+text = "RESTART"
+horizontal_alignment = 1
+vertical_alignment = 1
+paragraph_separator = "/n"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Button" to="CenterContainer/VBoxContainer/Button" method="_on_pressed"]
