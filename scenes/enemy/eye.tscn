@@ -1,0 +1,120 @@
+[gd_scene load_steps=25 format=3 uid="uid://bkgky87w5x3qy"]
+
+[ext_resource type="Texture2D" uid="uid://v4h8bj0ktta2" path="res://assets/Dark VFX 01 - 02/Dark VFX 1/Separeted frames/Dark VFX 1 (40x32)12.png" id="1_4t753"]
+[ext_resource type="Texture2D" uid="uid://ym0hjku6n7fg" path="res://assets/Dark VFX 01 - 02/Dark VFX 1/Separeted frames/Dark VFX 1 (40x32)13.png" id="2_fnv4i"]
+[ext_resource type="Texture2D" uid="uid://un7if0asjnli" path="res://assets/Dark VFX 01 - 02/Dark VFX 1/Separeted frames/Dark VFX 1 (40x32)14.png" id="3_651w4"]
+[ext_resource type="Texture2D" uid="uid://drhe4wftf1c4a" path="res://assets/Dark VFX 01 - 02/Dark VFX 1/Separeted frames/Dark VFX 1 (40x32)15.png" id="4_pfx7i"]
+[ext_resource type="Texture2D" uid="uid://fjyhsxrqcr0c" path="res://assets/Dark VFX 01 - 02/Dark VFX 1/Separeted frames/Dark VFX 1 (40x32)16.png" id="5_nn1h5"]
+[ext_resource type="Texture2D" uid="uid://bgim0k0mg6k1h" path="res://assets/Dark VFX 01 - 02/Dark VFX 1/Separeted frames/Dark VFX 1 (40x32)17.png" id="6_jgqx3"]
+[ext_resource type="Texture2D" uid="uid://rtmnwhnibqmj" path="res://assets/Dark VFX 01 - 02/Dark VFX 2/Separated Frames/Dark VFX 2 (48x64)1.png" id="7_tvddd"]
+[ext_resource type="Texture2D" uid="uid://dgoxrb0rek4ee" path="res://assets/Dark VFX 01 - 02/Dark VFX 2/Separated Frames/Dark VFX 2 (48x64)2.png" id="8_pmd8f"]
+[ext_resource type="Texture2D" uid="uid://bbfd0njxd2jk2" path="res://assets/Dark VFX 01 - 02/Dark VFX 2/Separated Frames/Dark VFX 2 (48x64)3.png" id="9_laboc"]
+[ext_resource type="Texture2D" uid="uid://isjkoxhobr6w" path="res://assets/Dark VFX 01 - 02/Dark VFX 2/Separated Frames/Dark VFX 2 (48x64)4.png" id="10_awbqc"]
+[ext_resource type="Texture2D" uid="uid://cvibejg6dcdhu" path="res://assets/Dark VFX 01 - 02/Dark VFX 2/Separated Frames/Dark VFX 2 (48x64)5.png" id="11_ex7lp"]
+[ext_resource type="Texture2D" uid="uid://bkiar10rq5kqy" path="res://assets/Dark VFX 01 - 02/Dark VFX 2/Separated Frames/Dark VFX 2 (48x64)6.png" id="12_wg4b6"]
+[ext_resource type="Texture2D" uid="uid://7h4eiv703owa" path="res://assets/Dark VFX 01 - 02/Dark VFX 2/Separated Frames/Dark VFX 2 (48x64)7.png" id="13_k5on8"]
+[ext_resource type="Texture2D" uid="uid://bn4dwuajbdpa1" path="res://assets/Dark VFX 01 - 02/Dark VFX 2/Separated Frames/Dark VFX 2 (48x64)8.png" id="14_4i6a5"]
+[ext_resource type="Texture2D" uid="uid://5pab6x6a05ua" path="res://assets/Dark VFX 01 - 02/Dark VFX 2/Separated Frames/Dark VFX 2 (48x64)9.png" id="15_hmkc7"]
+[ext_resource type="Texture2D" uid="uid://cl8gqjaalwwgs" path="res://assets/Dark VFX 01 - 02/Dark VFX 2/Separated Frames/Dark VFX 2 (48x64)10.png" id="16_63edo"]
+[ext_resource type="Texture2D" uid="uid://dfepe1qgwn3h0" path="res://assets/Dark VFX 01 - 02/Dark VFX 2/Separated Frames/Dark VFX 2 (48x64)11.png" id="17_3stxa"]
+[ext_resource type="Texture2D" uid="uid://b8au4vcr6sj4d" path="res://assets/Dark VFX 01 - 02/Dark VFX 2/Separated Frames/Dark VFX 2 (48x64)12.png" id="18_g6qw4"]
+[ext_resource type="Texture2D" uid="uid://ben06oq0mnmya" path="res://assets/Dark VFX 01 - 02/Dark VFX 2/Separated Frames/Dark VFX 2 (48x64)13.png" id="19_ffdim"]
+[ext_resource type="Texture2D" uid="uid://k43bbbvccpq8" path="res://assets/Dark VFX 01 - 02/Dark VFX 2/Separated Frames/Dark VFX 2 (48x64)15.png" id="20_yn5qc"]
+[ext_resource type="Texture2D" uid="uid://c211ga4h4o5hx" path="res://assets/Dark VFX 01 - 02/Dark VFX 2/Separated Frames/Dark VFX 2 (48x64)14.png" id="21_ph4ri"]
+[ext_resource type="Texture2D" uid="uid://d01kwoyf3v1vs" path="res://assets/Dark VFX 01 - 02/Dark VFX 2/Separated Frames/Dark VFX 2 (48x64)16.png" id="22_ds8sb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x02w4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_4t753")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_fnv4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_651w4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_pfx7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nn1h5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_jgqx3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_tvddd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_pmd8f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_laboc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_awbqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ex7lp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_wg4b6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_k5on8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_4i6a5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_hmkc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_63edo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_3stxa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_g6qw4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_ffdim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_yn5qc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ph4ri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ds8sb")
+}],
+"loop": true,
+"name": &"test",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xo5g"]
+size = Vector2(20, 32.1123)
+
+[node name="static_ghost" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(75, 54)
+sprite_frames = SubResource("SpriteFrames_x02w4")
+animation = &"test"
+frame_progress = 0.276403
+speed_scale = 2.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(75, 68)
+shape = SubResource("RectangleShape2D_8xo5g")

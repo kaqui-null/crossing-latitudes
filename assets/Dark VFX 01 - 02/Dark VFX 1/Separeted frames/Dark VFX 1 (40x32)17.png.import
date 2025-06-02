@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dil655rbctb25"
-path="res://.godot/imported/4_Cat_Fall-Sheet.png-87f1fd4109f62e055b32a0eb7f049ab7.ctex"
+uid="uid://bgim0k0mg6k1h"
+path="res://.godot/imported/Dark VFX 1 (40x32)17.png-78d705f3a187b7c9c9c3819cb86ba856.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/tiles/FreeCatCharacterAnimations/4_Cat_Fall-Sheet.png"
-dest_files=["res://.godot/imported/4_Cat_Fall-Sheet.png-87f1fd4109f62e055b32a0eb7f049ab7.ctex"]
+source_file="res://assets/Dark VFX 01 - 02/Dark VFX 1/Separeted frames/Dark VFX 1 (40x32)17.png"
+dest_files=["res://.godot/imported/Dark VFX 1 (40x32)17.png-78d705f3a187b7c9c9c3819cb86ba856.ctex"]
 
 [params]
 

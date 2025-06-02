@@ -1,0 +1,75 @@
+[gd_scene load_steps=14 format=3 uid="uid://be86rq3xcf3l0"]
+
+[ext_resource type="Script" uid="uid://bsegyii2oeghk" path="res://scripts/ghost.gd" id="1_ic586"]
+[ext_resource type="Texture2D" uid="uid://dubhcwo5q6m4i" path="res://assets/Dark VFX 01 - 02/Dark VFX 1/Separeted frames/Dark VFX 1 (40x32)1.png" id="1_uvnye"]
+[ext_resource type="Texture2D" uid="uid://16pfrlinetnx" path="res://assets/Dark VFX 01 - 02/Dark VFX 1/Separeted frames/Dark VFX 1 (40x32)2.png" id="2_ic586"]
+[ext_resource type="Texture2D" uid="uid://mnki2ehbdyuu" path="res://assets/Dark VFX 01 - 02/Dark VFX 1/Separeted frames/Dark VFX 1 (40x32)3.png" id="3_uvpab"]
+[ext_resource type="Texture2D" uid="uid://b5n3uxjc6n421" path="res://assets/Dark VFX 01 - 02/Dark VFX 1/Separeted frames/Dark VFX 1 (40x32)4.png" id="4_874xv"]
+[ext_resource type="Texture2D" uid="uid://bjvn2ee3xjrt1" path="res://assets/Dark VFX 01 - 02/Dark VFX 1/Separeted frames/Dark VFX 1 (40x32)5.png" id="5_8wdht"]
+[ext_resource type="Texture2D" uid="uid://b0la8imytgok0" path="res://assets/Dark VFX 01 - 02/Dark VFX 1/Separeted frames/Dark VFX 1 (40x32)6.png" id="6_4yi4i"]
+[ext_resource type="Texture2D" uid="uid://ds8khv2seiytj" path="res://assets/Dark VFX 01 - 02/Dark VFX 1/Separeted frames/Dark VFX 1 (40x32)7.png" id="7_xgc0m"]
+[ext_resource type="Texture2D" uid="uid://dhdrg6aj4tm50" path="res://assets/Dark VFX 01 - 02/Dark VFX 1/Separeted frames/Dark VFX 1 (40x32)9.png" id="8_g51n7"]
+[ext_resource type="Texture2D" uid="uid://ddwkjcnnq12uw" path="res://assets/Dark VFX 01 - 02/Dark VFX 1/Separeted frames/Dark VFX 1 (40x32)10.png" id="9_5u6am"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4b5ds"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uvnye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ic586")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_uvpab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_874xv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8wdht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_4yi4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xgc0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_g51n7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_5u6am")
+}],
+"loop": true,
+"name": &"teste",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uvpab"]
+
+[sub_resource type="Curve2D" id="Curve2D_874xv"]
+
+[node name="Ghost" type="CharacterBody2D"]
+script = ExtResource("1_ic586")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(20, 16)
+sprite_frames = SubResource("SpriteFrames_4b5ds")
+animation = &"teste"
+frame_progress = 0.259405
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(21, 16)
+shape = SubResource("CircleShape2D_uvpab")
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_874xv")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
