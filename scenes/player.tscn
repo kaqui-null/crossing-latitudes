@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://070mc47b0j1n"]
+[gd_scene load_steps=13 format=3 uid="uid://070mc47b0j1n"]
 
 [ext_resource type="Script" uid="uid://c0n1ij8bu3q28" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="PackedScene" uid="uid://mmholmav2f1e" path="res://scenes/magic.tscn" id="2_dqkch"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://gewl4dvw2taj" path="res://assets/characters/main_ch/frame5.png" id="7_jej6c"]
 [ext_resource type="Texture2D" uid="uid://5sby2c1o8lv8" path="res://assets/characters/main_ch/frame6.png" id="8_f1ej7"]
 [ext_resource type="Texture2D" uid="uid://wc14kdrk8251" path="res://assets/characters/main_ch/frame7.png" id="9_oprun"]
+[ext_resource type="Texture2D" uid="uid://d4l5nhnho1jmq" path="res://assets/characters/MC_rightside.png" id="10_y4r1p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
 size = Vector2(9.61539, 27.7778)
@@ -40,9 +41,18 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_y4r1p")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
+position = Vector2(1, 33)
 script = ExtResource("1_g2els")
 magic_scene = ExtResource("2_dqkch")
 
@@ -58,5 +68,4 @@ gizmo_extents = 5.0
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_a8ls1")
-frame = 5
-frame_progress = 0.0769429
+animation = &"idle"
