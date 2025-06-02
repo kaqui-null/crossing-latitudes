@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://mm7du0fqas3e" path="res://scenes/mapa.tscn" id="1_o5qli"]
 [ext_resource type="PackedScene" uid="uid://be86rq3xcf3l0" path="res://scenes/enemy/ghost.tscn" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://bkgky87w5x3qy" path="res://scenes/enemy/eye.tscn" id="3_sugp2"]
-[ext_resource type="Script" path="res://scripts/ghost_static.gd" id="4_jyhfs"]
+[ext_resource type="Script" uid="uid://blmxn8yskwwja" path="res://scripts/ghost_static.gd" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://070mc47b0j1n" path="res://scenes/player.tscn" id="5_tbgi4"]
 
 [node name="Main" type="Node2D"]
