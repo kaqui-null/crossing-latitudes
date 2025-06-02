@@ -1,24 +1,62 @@
-[gd_scene load_steps=5 format=3 uid="uid://070mc47b0j1n"]
+[gd_scene load_steps=12 format=3 uid="uid://070mc47b0j1n"]
 
 [ext_resource type="Script" uid="uid://c0n1ij8bu3q28" path="res://scripts/player.gd" id="1_g2els"]
 [ext_resource type="PackedScene" uid="uid://mmholmav2f1e" path="res://scenes/magic.tscn" id="2_dqkch"]
-[ext_resource type="Texture2D" uid="uid://ddsc4ppje5b2m" path="res://icon.svg" id="2_qhqgy"]
+[ext_resource type="Texture2D" uid="uid://c0mjfx07fv8cy" path="res://assets/characters/main_ch/frame1.png" id="3_ur7pv"]
+[ext_resource type="Texture2D" uid="uid://bt48o284w7hv8" path="res://assets/characters/main_ch/frame2.png" id="4_y4r1p"]
+[ext_resource type="Texture2D" uid="uid://cv52itu3gy3wd" path="res://assets/characters/main_ch/frame3.png" id="5_d2wvv"]
+[ext_resource type="Texture2D" uid="uid://cd4c2vskfuye2" path="res://assets/characters/main_ch/frame4.png" id="6_3v2ag"]
+[ext_resource type="Texture2D" uid="uid://gewl4dvw2taj" path="res://assets/characters/main_ch/frame5.png" id="7_jej6c"]
+[ext_resource type="Texture2D" uid="uid://5sby2c1o8lv8" path="res://assets/characters/main_ch/frame6.png" id="8_f1ej7"]
+[ext_resource type="Texture2D" uid="uid://wc14kdrk8251" path="res://assets/characters/main_ch/frame7.png" id="9_oprun"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dqkch"]
-size = Vector2(117.308, 114.815)
+size = Vector2(9.61539, 27.7778)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a8ls1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ur7pv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_y4r1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_d2wvv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_3v2ag")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jej6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_f1ej7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_oprun")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_g2els")
 magic_scene = ExtResource("2_dqkch")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 0.999998)
+position = Vector2(-1, 1)
 scale = Vector2(1.04, 1.08)
 shape = SubResource("RectangleShape2D_dqkch")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_qhqgy")
 
 [node name="magic_spawner" type="Marker2D" parent="."]
 unique_name_in_owner = true
 gizmo_extents = 5.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_a8ls1")
+frame = 5
+frame_progress = 0.0769429
