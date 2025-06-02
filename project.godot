@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="crossing-latitudes"
-run/main_scene="uid://070mc47b0j1n"
+run/main_scene="uid://sl5x5vs42xdq"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
